@@ -1,10 +1,14 @@
 import "./App.css";
-import engines from "./js/engine_info";
+import CalculatorWindow from "./components/calculator-window/CalculatorWindow";
 
 export default function App() {
   return (
-    <div>
-      Hello World
+    <div className="home-page">
+      <div className="header">
+        <h1>Space Flight Simulator</h1>
+        <h2>Flight Parameter Calculator</h2>
+        <CalculatorWindow />
+      </div>
     </div>
   );
 }
