@@ -1,6 +1,6 @@
 import "./BurnTime.css";
 import engines from "../../../../js/engine_info.js";
-import { calculateBurnTime } from "../../../../js/maths.js"
+import { calculateBurnTime } from "../../../../js/maths.js";
 import { useState } from "react";
 
 export default function BurnTime() {
@@ -9,15 +9,19 @@ export default function BurnTime() {
   const [engine, setEngine] = useState("");
   const [burnTime, setBurnTime] = useState("-");
 
-  function handleSubmit(e){
-    const engineObject = engines.find((eng) => (eng.id == engine));
+  function handleSubmit(e) {
+    const engineObject = engines.find((eng) => eng.id == engine);
     console.log("here");
-    setBurnTime(calculateBurnTime(mass,engineObject.thrust,engineObject.isp,count));
+    setBurnTime(
+      calculateBurnTime(mass, engineObject.thrust, engineObject.isp, count),
+    );
     e.preventDefault();
   }
   return (
     <div className="burn-time">
+      <h2>Burn Time</h2>
       <form onSubmit={handleSubmit}>
+        <label>Fuel(Tons)</label>
         <input
           name="mass"
           type="number"
@@ -25,18 +29,19 @@ export default function BurnTime() {
           value={mass}
           onChange={(e) => setMass(Number(e.target.value))}
         />
+        <label>Engine</label>
         <select
           name="engine"
           value={engine}
           onChange={(e) => setEngine(e.target.value)}
         >
-          <option value="">Select Engine</option>
           {engines.map((eng) => (
             <option key={eng.id} value={eng.id}>
               {eng.name}
             </option>
           ))}
         </select>
+        <label>Count</label>
         <input
           name="count"
           type="number"
@@ -44,9 +49,11 @@ export default function BurnTime() {
           value={count}
           onChange={(e) => setCount(Number(e.target.value))}
         />
-        <button type="submit">Submit</button>
+        <button className="pushable" type="submit">
+          <span className="front">Go</span>
+        </button>
       </form>
-      {burnTime}
+      <div className="burn-time-result">Burn Time: {burnTime} seconds</div>
     </div>
   );
 }
