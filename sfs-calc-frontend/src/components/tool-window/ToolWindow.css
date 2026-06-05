@@ -1,0 +1,7 @@
+.tool-window{
+    background-color: black;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    border: 1px white solid;
+}

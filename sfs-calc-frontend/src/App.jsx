@@ -5,8 +5,8 @@ export default function App() {
   return (
     <div className="home-page">
       <div className="header">
-        <h1>Space Flight Simulator</h1>
-        <h2>Flight Parameter Calculator</h2>
+        <h1>Spaceflight Simulator</h1>
+        <h2>Flight Parameters Calculator</h2>
         <CalculatorWindow />
       </div>
     </div>
