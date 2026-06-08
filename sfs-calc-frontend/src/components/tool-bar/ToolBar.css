@@ -5,6 +5,7 @@
   font-family: sans-serif;
   gap: 1rem;
   padding-top: 1rem;
+  margin: 0.5rem 0 0.5rem 0.5rem;
   background: rgba(196, 196, 196, 0.49);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
