@@ -8,6 +8,7 @@
   outline-offset: 4px;
   text-align: left;
 }
+
 .front {
   display: block;
   padding: 12px 34px;
@@ -16,6 +17,11 @@
   background: #ab9f9f;
   color: white;
   transform: translateY(-6px);
+  transition: transform 0.15s ease;
+}
+
+.pushable:hover .front {
+  transform: translateY(-8px);
 }
 
 .pushable:active .front {
